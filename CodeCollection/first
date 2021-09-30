@@ -1,0 +1,19 @@
+#include<bits/stdc++.h>
+ using namespace std;
+int a[200050],n,m,q,u,v,p,t;
+void poo(int x){
+  cin>>u>>v;
+  u=min(u,v);
+  p+=!(a[u]+=x)-(a[u]==1&&x==1);
+}
+ int main(){
+    cin>>n>>m;
+    while(m--)poo(1);
+    cin>>q;
+    while(q--){
+        cin>>t;
+        if(t==3)cout<<p+n<<endl;
+        else {poo((t==1)-(t==2));}
+    }
+    return 0;
+}
