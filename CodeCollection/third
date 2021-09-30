@@ -1,0 +1,7 @@
+#include <cstdio>
+using A = long long;
+#define P A(1e9+7)
+#define M A(4e6)
+int n,q,x,c;A a[M],v[M],p[M];
+int main(){scanf("%d%d",&n,&q);c=3*n+3;v[1]=1;int i;for(i=2;i<=c;++i)
+v[i]=(P-P/i)*v[P%i]%P;p[0]=1;for(i=1;i<=c;++i)p[i]=p[i-1]*(c-i+1)%P*v[i]%P;for(i=3*n;i;--i)a[i]=(((p[i+3]-3*(a[i+1]+a[i+2]))%P)+P)%P;while(q--){scanf("%d",&x);printf("%d\n",a[x]);}}
